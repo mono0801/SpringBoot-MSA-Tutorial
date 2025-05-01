@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  config-server:
+    build: .
+    container_name: config-server
+    ports:
+      - "9000:9000"
+    environment:
+      GIT_REPO: ${GIT_REPO}
+      GIT_PRIVATE: ${GIT_PRIVATE}
