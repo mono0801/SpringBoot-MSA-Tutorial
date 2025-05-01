@@ -1,0 +1,9 @@
+services:
+  config-client:
+    build: .
+    container_name: config-client
+    environment:
+      CONFIG_SERVER: ${CONFIG_SERVER}
+      EUREKA_SERVER: ${EUREKA_SERVER}
+    ports:
+      - "8080:8080"
