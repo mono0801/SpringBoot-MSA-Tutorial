@@ -5,23 +5,3 @@ server:
 spring:
   application:
     name: SpringCloudGateWay
-
-  cloud:
-    gateway:
-      mvc:
-        routes:
-          - id: ms1
-            # 해당 url을 8080 포트로 포워딩
-            uri: http://localhost:8080
-            predicates:
-              # /ms1/ 로 시작하는 url을 감지
-              # Path 방식 라우팅 사용
-              - Path=/ms1/**
-          - id: ms2
-            uri: http://localhost:8081
-            predicates:
-              - Path=/ms2/**
-          - id: normal
-            uri: http://localhost:8082
-            predicates:
-              - Path=/normal/**
