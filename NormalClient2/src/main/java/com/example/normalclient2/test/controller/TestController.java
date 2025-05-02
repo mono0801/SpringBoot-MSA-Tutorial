@@ -1,4 +1,4 @@
-package com.example.normalclient.test.controller;
+package com.example.normalclient2.test.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +10,6 @@ public class TestController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello World! This is Normal Client1";
+        return "Hello World! - This is Normal Client 2";
     }
 }
