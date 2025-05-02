@@ -18,7 +18,9 @@ public class CustomRoute {
                 .route("ms2", p -> p.path("/ms2/**")
                         .uri("http://localhost:8081"))
                 .route("normal", p -> p.path("/normal/**")
-                        .uri("lb://NORMALCLIENT"))
+                        // 대소문자 상관 X
+                        //.uri("lb://NORMALCLIENT"))
+                        .uri("lb://normalclient"))
                 .build();
     }
 }
