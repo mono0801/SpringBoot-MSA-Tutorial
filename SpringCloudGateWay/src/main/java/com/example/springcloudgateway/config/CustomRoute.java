@@ -18,7 +18,7 @@ public class CustomRoute {
                 .route("ms2", p -> p.path("/ms2/**")
                         .uri("http://localhost:8081"))
                 .route("normal", p -> p.path("/normal/**")
-                        .uri("http://localhost:8082"))
+                        .uri("lb://NORMALCLIENT"))
                 .build();
     }
 }
