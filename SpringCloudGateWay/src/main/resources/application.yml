@@ -1,0 +1,7 @@
+# 마이크로 서버의 포트 번호가 8080, 8081, 8082 이므로 8000으로 할당함
+server:
+  port: 8000
+
+spring:
+  application:
+    name: SpringCloudGateWay
