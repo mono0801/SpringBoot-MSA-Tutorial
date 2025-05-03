@@ -5,6 +5,19 @@ server:
 spring:
   application:
     name: SpringCloudGateWay
+#  yml으로 라우팅과 지역 필터 설정하는 법
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: ms1
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/ms1/**
+#          filters:
+#            - name: L1Filter
+#              args:
+#                pre: true
+#                post: true
 
 eureka:
   client:
