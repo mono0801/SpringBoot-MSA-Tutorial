@@ -1,0 +1,36 @@
+networks:
+  monitoring-net:
+
+services:
+  springboot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot
+    networks:
+      - monitoring-net
+    ports:
+      - "8080:8080"
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    networks:
+      - monitoring-net
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    networks:
+      - monitoring-net
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
