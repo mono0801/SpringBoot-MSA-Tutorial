@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CustomRoute {
 
-    @Bean
+/*    @Bean
     // spring-cloud-starter-gateway-mvc는 RouteLocator가 존재하지 않음
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
 
@@ -28,5 +28,17 @@ public class CustomRoute {
                         //.uri("lb://NORMALCLIENT"))
                         .uri("lb://normalclient"))
                 .build();
-    }
+    }*/
+
+/*    @Bean
+    // spring-cloud-starter-gateway-mvc는 RouteLocator가 존재하지 않음
+    public RouteLocator routeLocator(RouteLocatorBuilder builder) {
+
+        return builder.routes()
+                .route("normal", p -> p.path("/normal/**")
+                        .uri("http://localhost:8082"))
+                .route("normal1", p -> p.path("/normal1/**")
+                        .uri("http://localhost:8083"))
+                .build();
+    }*/
 }
